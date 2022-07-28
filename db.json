@@ -1,0 +1,36 @@
+{
+    "chartdetails": [
+      {
+        "id": 1,
+        "name": "GOLD SPOT",
+        "pairname": "XAUUSD",
+        "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
+        "comments": 
+            "Best Trading pair of all times"
+      },
+      {
+        "id": 2,
+        "name": "SILVER",
+        "pairname": "XAGUSD",
+        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+        "comments": 
+            "Check on the forex calendar news"
+      },
+      {
+        "id": 3,
+        "name": "EURO SPOT",
+        "pairname": "EURUSD",
+        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+        "comments": 
+            "Best Trading pair of all times"
+      },
+      {
+        "id": 4,
+        "name": "CANADIAN DOLLAR",
+        "pairname": "CADUSD",
+        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+        "comments": 
+        "Good for NewYork trade time"
+      }
+    ]
+  }
