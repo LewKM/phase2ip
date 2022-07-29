@@ -1,36 +1,25 @@
 {
-    "chartdetails": [
-      {
-        "id": 1,
-        "name": "GOLD SPOT",
-        "pairname": "XAUUSD",
-        "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-        "comments": 
-            "Best Trading pair of all times"
-      },
-      {
-        "id": 2,
-        "name": "SILVER",
-        "pairname": "XAGUSD",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-        "comments": 
-            "Check on the forex calendar news"
-      },
-      {
-        "id": 3,
-        "name": "EURO SPOT",
-        "pairname": "EURUSD",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-        "comments": 
-            "Best Trading pair of all times"
-      },
-      {
-        "id": 4,
-        "name": "CANADIAN DOLLAR",
-        "pairname": "CADUSD",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-        "comments": 
-        "Good for NewYork trade time"
-      }
-    ]
-  }
+  "chartdetails": [
+    {
+      "id": 1,
+      "title": "GOLD SPOT",
+      "pairname": "XAUUSD",
+      "image": "https://www.tradingview.com/chart/GOLD/bTDvX9zI-Understanding-the-Forces-Driving-GOLD-Prices/",
+      "comments": "Best Trading pair of all times"
+    },
+    {
+      "id": 2,
+      "title": "SILVER",
+      "pairname": "XAGUSD",
+      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
+      "comments": "Check on the forex calendar news"
+    },
+    {
+      "title": "Lewis Mwendwa",
+      "comment": "An awesome pair to trade",
+      "pairname": "XAUUSD",
+      "image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.tradingview.com%2Fi%2FKf27RrhJ%2F&imgrefurl=https%3A%2F%2Fwww.tradingview.com%2Fchart%2FGOLD%2FKf27RrhJ-Gold-near-the-ultimate-Top-still-space-for-17-point-uptrend%2F&tbnid=696b7VH2q_qLPM&vet=12ahUKEwivubDmo535AhUS_RoKHZKGA6QQMygXegUIARDtAQ..i&docid=ub2ZDCv_sCy6YM&w=2186&h=1570&itg=1&q=gold%20trading%20view%20picture&ved=2ahUKEwivubDmo535AhUS_RoKHZKGA6QQMygXegUIARDtAQ",
+      "id": 3
+    }
+  ]
+}

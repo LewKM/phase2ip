@@ -1,14 +1,32 @@
-import React from "react";
-import "./Charts.css";
+import React, {useEffect, useState} from "react";
+// import "../css/Charts.css";
+import ChartsContainer from "./ChartsContainer";
 
-const Charts = ({ chartdetails }) => {
+
+function Charts() {
+  const [chartdetails, setCharts] = useState([])
+  
+
+  useEffect(() => {
+    (
+      async () => {
+        let req = await  fetch('http://localhost:3000/chartdetails',{
+          method: "GET",
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        let res = await req.json()
+        setCharts(res)
+      }
+    )()
+  },[])
+
+  
   return (
-    <div className="recipe">
-      <h3>{chartdetails.name}</h3>
-      <img src={chartdetails.image} alt={chartdetails.name} />
-      <div className="description">
-        <p>{chartdetails.ingredients}</p>
-        <p>{chartdetails.directions}</p>
+    <div className="chartdisplay">
+      <div>
+        <ChartsContainer chartdetails={chartdetails}/>
       </div>
     </div>
   );

@@ -1,66 +1,35 @@
+import "../css/ContactForm.css"
 export default function ContactForm() {
-    //styles for the form
-    const container = {
-      width: "500px",
-      margin: "0 auto",
-      padding: "20px",
-      alignItems: "center",
-    };
-    const formStyles = {
-      display: "flex",
-      flexDirection: "column",
-      // alignItems: "center",
-      rowGap: "5px",
-      margin: '0 auto',
-      width: '100%',
-      padding: '20px',
-      border: '1px solid #ccc',
-      borderRadius: '10px',
-      backgroundColor:'#f2f2f2'
-    }
-    const inputStyles= {
-      width: "100%",
-      height: "40px",
-      borderRadius: "10px",
-      border: "1px solid #000000",
-      padding: "10px",
-      margin: "10px",
-    };
-    const buttonStyles = {
-      width: "100%",
-      height: "40px",
-      borderRadius: "10px",
-      border: "1px solid #000000",
-      padding: "10px",
-      margin: "10px",
-      backgroundColor: "#000000",
-      color: "white",
-    };
-    const labelStyles = {
-      width: "20%",
-      // height: "40px",
-      textAlign: "center",
-      borderRadius: "10px",
-      border: "1px solid #000000",
-      padding: "10px",
-      // margin: "5px",
-      backgroundColor: "#000000",
-      color: "white",
-    };
   
     return (
-      <div style={container}>
-        <div style={formStyles}>
-          <label style={labelStyles}>Name:</label>
-          <input style={inputStyles} type="text" name="name" />
-          <label style={labelStyles}>Email:</label>
-          <input style={inputStyles} type="text" name="email" />
-          <label style={labelStyles}>Message:</label>
-          <input style={inputStyles} type="text" name="message" />
-          <button style={buttonStyles} type="submit">
-            Submit
-          </button>
+     <div>
+      <div id="contactform">
+        <div class="container">
+          <div class="formStyles">
+            <label class="labelStyles">Name:</label>
+            <input class="inputStyles" type="text" name="name" />
+            <label class="labelStyles">Email:</label>
+            <input class="inputStyles" type="text" name="email" />
+            <label class="labelStyles">Message:</label>
+            <input class="inputStyles" type="text" name="message" />
+            <button class="buttonStyles" type="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+        <div id="para">
+        <h2>Contact Us</h2>
+        <p>
+      If you're looking for a forex trading platform that allows you to share your ideas with other traders, then you've come to the right place. Our platform is designed to provide a collaborative environment for traders to share their ideas and strategies, and to learn from each other.
+        </p>
+      <p>
+We believe that by sharing our ideas and strategies, we can all become better traders. Our platform is easy to use and provides all the tools you need to succeed in the forex market. So why not join us today and start sharing your ideas with other traders?
+      </p>
         </div>
       </div>
+      <img 
+    src={process.env.PUBLIC_URL + "/How-to-get-to-NTSA-offices-Upper-Hill-from-Nairobi-CBD-by-Bus-or-Matatu.jpg"}
+          alt="chart"/>
+     </div>
     );
   }

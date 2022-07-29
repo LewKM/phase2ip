@@ -1,0 +1,26 @@
+  .content {
+    display: flex;
+    flex-direction: column;
+    color:whitesmoke;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+  }
+  .landing-page-image img {
+    width: 70%;
+    object-fit: contain;
+    height: auto;
+  }
+  .btn {
+    width: 50%;
+  }
+
+  .landing-page {
+    display: flex;
+    background-image: url("/public/wallpaperflare.com_wallpaper (1).jpg");
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+  }
