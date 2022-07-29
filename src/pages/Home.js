@@ -24,7 +24,6 @@ export default function LandingPage() {
         <p>
           By understanding how the smart money moves the market, retail traders can get a leg up on the competition. There are a number of ways to track smart money, but one of the most popular is through the use of order flow data. This data shows the number of buy and sell orders placed at different price levels and can give traders a good idea of where the smart money is active.
         </p>
-        <p>To create a chart story, click the button below.</p>
         <button className="btn" onClick={routeChange}>
           Create Chart
         </button>
@@ -36,12 +35,6 @@ export default function LandingPage() {
         />
       </div>
       <div>
-        <h1>Trending Charts</h1>
-        <div id="api">
-            <div >
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            </div>
-        </div>
       </div>
     </div>
   );

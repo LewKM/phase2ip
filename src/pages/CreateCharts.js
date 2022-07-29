@@ -7,12 +7,12 @@ export default function CreateCharts() {
   const [pairname, setPairname] = useState("")
   const [comments, setComments] = useState("")
   const [image, setImage] = useState("")
-  const [isFormHidden, setIsFormHidden] = useState(false)
+  const [isFormHidden] = useState(false)
   const [chartdetails, setCharts] = useState([])
 
-  function handleFormHiddenBtn(){
-    setIsFormHidden(!isFormHidden)
-  }
+  // function handleFormHiddenBtn(){
+  //   setIsFormHidden(!isFormHidden)
+  // }
 
   function addNewCharts(newChart){
     const updatedCharts = [...chartdetails,newChart]
@@ -72,7 +72,7 @@ export default function CreateCharts() {
       <div className="container">
         <h1>Create Chart</h1>
         <form onSubmit={handleSubmit} className="form-center">
-        <button onClick={handleFormHiddenBtn}>Show/hide new  form</button>
+        {/* <button onClick={handleFormHiddenBtn}>Show/hide new  form</button> */}
       {isFormHidden ? <CreateCharts addNewCharts={addNewCharts}/> : null}
           <label>Name:</label>
           <input type="text" name="name" value={title} onChange={(e) => setTitle(e.target.value)}/>

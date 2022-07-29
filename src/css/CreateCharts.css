@@ -6,7 +6,8 @@
     width: 400px;
     height: 800px;
     margin: 0 auto;
-    padding: 200px;
+    padding-top: 150px;
+    padding-right: 200px;
   }
   .container h1 {
     text-align: center;
@@ -54,4 +55,8 @@
   font-style: italic;
   padding-left: 40px;
 
+}
+
+h1{
+  color: white;
 }
