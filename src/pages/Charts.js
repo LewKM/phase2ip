@@ -5,9 +5,16 @@ import "../css/Charts.css"
 
 const FeaturedCharts = () => {
   const [products, setProducts] = useState([]);
-useEffect(() => {
-  fetchProducts();
-}, []);
+    useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const [isMarked, setIsMarked] = useState(false)
+
+  const handleMarkBtn = () => {
+    setIsMarked(!isMarked)
+  }
+
 const fetchProducts = () => {
   axios
     .get('http://localhost:3000/chartdetails')
@@ -34,7 +41,7 @@ return (
               <h1>{product.title}</h1>
               <h3>{product.pairname}</h3>
               <p>{product.comment}</p>
-              <button></button>
+              <button onClick={handleMarkBtn}>{isMarked ? "Mark as unread" : "Mark as read" }</button>
             </div>
           </div>
         ))}
