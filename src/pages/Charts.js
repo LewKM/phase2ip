@@ -22,7 +22,7 @@ const fetchProducts = () => {
 return (
     <div id="main-page">
       <h1>Featured Charts</h1>
-      <div className='item-container'>
+      <div className='chart-container'>
         {products.map((product) => (
           <div className='card'>
             <div className='imgcard'>
