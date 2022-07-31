@@ -39,3 +39,7 @@
   padding: 20px;
 }
 
+.detail-card p{
+  font-style: italic;
+}
+
