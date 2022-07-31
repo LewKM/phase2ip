@@ -2,3 +2,24 @@
   height: 1000px;
   background-image: url('/public/1304041.jpg');
 }
+
+.home__row{
+  color: white;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.home__row p{
+  font-size: 20px;
+  text-align: center;
+}
+
+button{
+  width: 20%;
+  margin-bottom: 5%;
+  color: black;
+}
+
+#head{
+  padding: 0%;
+}
