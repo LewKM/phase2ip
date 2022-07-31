@@ -1,13 +1,5 @@
-.chartdisplay {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  background-image: url("/public/1304041.jpg");
-  height: 900px;
+#main-page{
   width: 100%;
+  height: 100%;
+  background-image: url("/public/1304041.jpg");
 }

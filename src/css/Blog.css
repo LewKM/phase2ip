@@ -1,16 +1,4 @@
-#createchart{
-    background-image: url("/public/wallpaperflare.com_wallpaper (1).jpg");
-    height: 900px;
-    width: 100%;
-  }
-#qoutes{
-  color: white;
-  font-size: large;
-  float: left;
-  justify-content: center;
-  align-items: center;
-  padding-top: 150px;
-  font-style: italic;
-  padding-left: 40px;
-
+#home{
+  height: 1000px;
+  background-image: url('/public/1304041.jpg');
 }
