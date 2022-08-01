@@ -19,6 +19,6 @@
 #link:hover{
     color: yellowgreen;
 }
-#link::current{
+#link:active{
     color: rgb(255, 174, 60);
  }
