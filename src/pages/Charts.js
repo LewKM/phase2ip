@@ -17,7 +17,7 @@ const FeaturedCharts = () => {
 
 const fetchProducts = () => {
   axios
-    .get('http://localhost:3000/chartdetails')
+    .get('https://forex-talks-app.herokuapp.com/chartdetails')
     .then((res) => {
       console.log(res);
       setProducts(res.data);

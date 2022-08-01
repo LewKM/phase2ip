@@ -25,7 +25,7 @@ export default function CreateCharts() {
     console.log("Pairname: ", pairname)
     console.log("Comments: ", comments)
     console.log("Images: ", image)
-    fetch('http://localhost:3000/chartdetails',{
+    fetch('https://forex-talks-app.herokuapp.com/chartdetails',{
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
