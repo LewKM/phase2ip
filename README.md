@@ -31,7 +31,8 @@ This Sperizon Forex ideas website is a landing page that serves as the platform 
  ****
  [Go Back to the top](#React-Web-Forex-Idea-Platform)
 ### Live Link
-- Click this link to view the live application 
+- Click this link to view the live application.
+https://forex-talks.netlify.app/
 ### Technology  Used
 * HTML - which was used to develop the structure off the pages and deployed on Netlify.
 * CSS - which was used to style the User Interface.
