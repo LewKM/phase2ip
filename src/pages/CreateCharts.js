@@ -1,45 +1,46 @@
 import React, {useState} from "react";
 import "../css/CreateCharts.css";
 
-export default function CreateCharts() {
+export default function CreateCharts(addNewCharts) {
 
-  const [title, setTitle] = useState("")
-  const [pairname, setPairname] = useState("")
-  const [comments, setComments] = useState("")
-  const [image, setImage] = useState("")
+  const [user_id, setTitle] = useState("")
+  const [trading_pair, setPairname] = useState("")
+  const [comment, setComments] = useState("")
+  const [image_url, setImage] = useState("")
   const [isFormHidden] = useState(false)
-  const [chartdetails, setCharts] = useState([])
+  // const [reviews, setCharts] = useState([])
 
   // function handleFormHiddenBtn(){
   //   setIsFormHidden(!isFormHidden)
   // }
 
-  function addNewCharts(newChart){
-    const updatedCharts = [...chartdetails,newChart]
-    setCharts(updatedCharts)
-  }
+  // function addNewCharts(newChart){
+  //   const updatedCharts = [...reviews,newChart]
+  //   setCharts(updatedCharts)
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("Name: ", title)
-    console.log("Pairname: ", pairname)
-    console.log("Comments: ", comments)
-    console.log("Images: ", image)
-    fetch('https://forex-talks-app.herokuapp.com/chartdetails',{
+    // ("Name: ", user_id)
+    // ("Pairname: ", trading_pair)
+    // ("Comments: ", comment)
+    // ("Images: ", image_url)
+    const reviewData = {
+      user_id: user_id,
+      comment: comment,
+      trading_pair: trading_pair,
+      image_url: image_url,
+    };
+    fetch('http://localhost:9292/reviews',{
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        title:title,
-        comment:comments,
-        pairname: pairname,
-        image: image
-      })
+      body: JSON.stringify(reviewData)
     })
     .then((res) => res.json())
     .then((newChart) => addNewCharts(newChart))
- 
+
     setTitle("")
     setPairname("")
     setComments("")
@@ -75,13 +76,13 @@ export default function CreateCharts() {
         {/* <button onClick={handleFormHiddenBtn}>Show/hide new  form</button> */}
       {isFormHidden ? <CreateCharts addNewCharts={addNewCharts}/> : null}
           <label>Name:</label>
-          <input type="text" name="name" value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <input type="text" name="user_id" value={user_id} onChange={(e) => setTitle(e.target.value)}/>
           <label>Pairs:</label>
-          <input type="text" name="pairname" value={pairname} onChange={(e) => setPairname(e.target.value)}/>
+          <input type="text" name="trading_pair" value={trading_pair} onChange={(e) => setPairname(e.target.value)}/>
           <label>Comments:</label>
-          <input type="text" name="comments" rows={10} value={comments} onChange={(e) => setComments(e.target.value)}/>
+          <input type="text" name="comment" rows={10} value={comment} onChange={(e) => setComments(e.target.value)}/>
           <label>Image:</label>
-          <input type="text" name="image" value={image} onChange={(e) => setImage(e.target.value)}/>
+          <input type="text" name="image_url" value={image_url} onChange={(e) => setImage(e.target.value)}/>
           <input type="submit" value="Share your Chart and Comments" />
         </form>
       </div>
