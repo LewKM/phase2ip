@@ -7,6 +7,7 @@ import CreateCharts from './pages/CreateCharts';
 import FeaturedCharts from './pages/Charts';
 import ContactForm from './pages/ContactForm';
 import BlogPart from './pages/Blog';
+import UpdateCharts from './pages/UpdateCharts';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/' element={<LandingPage />}></Route>
         <Route path='/add' element={<CreateCharts />}></Route>
         <Route path='/chart' element={<FeaturedCharts />} ></Route>
+        <Route path='/update' element={<UpdateCharts />} ></Route>
         <Route path='/contact' element={<ContactForm />}></Route>
         <Route path='/blog' element={<BlogPart />}></Route>
       </Routes>

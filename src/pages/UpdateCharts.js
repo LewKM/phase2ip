@@ -1,19 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "../css/CreateCharts.css";
 import { useHistory } from 'react-router';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 
-export default function CreateCharts() {
+export default function UpdateCharts() {
 
-  let history = useHistory();
-    const [comment, setComment] = useState('');
+    let history = useHistory();
+    const [id, setID] = useState(null);
+    const [comment, setComment] = useState(''); 
     const [image_url, setImageUrl] = useState('');
     const [trading_pair, setTradingPair] = useState('');
     const [user_id, setUserId] = useState('');
     const [isFormHidden] = useState(false);
-    const postData = () => {
-        axios.post(`http://localhost:9292/reviews`, {
+    
+
+    useEffect(() => {
+        setID(localStorage.getItem('ID'));
+        setComment(localStorage.getItem('Comment'));
+        setImageUrl(localStorage.getItem('Chart'));
+        setTradingPair(localStorage.getItem('Trading Pair'));
+        setUserId(localStorage.getItem('User ID'));
+    }, []);
+
+    const updateAPIData = () => {
+        axios.patch(`http://localhost:9292/reviews/${id}`, {
             comment,
             image_url,
             trading_pair,
@@ -47,27 +58,27 @@ export default function CreateCharts() {
 
 
       <div className="container">
-        <h1>Create Chart</h1>
+        <h1>Update Chart</h1>
     
         <Form className="form-center">
-        {isFormHidden ? <CreateCharts /> : null}
+        {isFormHidden ? <UpdateCharts/> : null}
                 <Form.Field>
                     <label>Comment</label>
-                    <input placeholder='Comment' name="comment" rows={10} onChange={(e) => setComment(e.target.value)}/>
+                    <input placeholder='Comment' name="comment" rows={10} value={comment} onChange={(e) => setComment(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Chart</label>
-                    <input placeholder='Chart' name= "image_url"  onChange={(e) => setImageUrl(e.target.value)}/>
+                    <input placeholder='Chart' name= "image_url"  value={image_url} onChange={(e) => setImageUrl(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Trading Pair</label>
-                    <input placeholder='Trading Pair' name="trading_pair"  onChange={(e) => setTradingPair(e.target.value)}/>
+                    <input placeholder='Trading Pair' name="trading_pair" value={trading_pair} onChange={(e) => setTradingPair(e.target.value)}/>
                 </Form.Field>
                 <Form.Field>
                     <label>User ID</label>
-                    <input placeholder='User ID' name="user_id"  onChange={(e) => setUserId(e.target.value)}/>
+                    <input placeholder='User ID' name="user_id" value={user_id} onChange={(e) => setUserId(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={postData} type='submit'>Submit</Button>
+                <Button onClick={updateAPIData} type='submit'>Update</Button>
             </Form>
       </div>
     </div>
