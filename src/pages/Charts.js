@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import "../css/Charts.css";
 
-export default function Read() {
+export default function FeaturedCharts() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
         axios.get(`http://localhost:9292/reviews`)
