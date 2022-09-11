@@ -1,51 +1,27 @@
 import React, {useState} from "react";
 import "../css/CreateCharts.css";
+import { useHistory } from 'react-router';
+import { Button, Form } from 'semantic-ui-react'
+import axios from 'axios';
 
 export default function CreateCharts(addNewCharts) {
 
-  const [user_id, setTitle] = useState("")
-  const [trading_pair, setPairname] = useState("")
-  const [comment, setComments] = useState("")
-  const [image_url, setImage] = useState("")
-  const [isFormHidden] = useState(false)
-  // const [reviews, setCharts] = useState([])
-
-  // function handleFormHiddenBtn(){
-  //   setIsFormHidden(!isFormHidden)
-  // }
-
-  // function addNewCharts(newChart){
-  //   const updatedCharts = [...reviews,newChart]
-  //   setCharts(updatedCharts)
-  // }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    // ("Name: ", user_id)
-    // ("Pairname: ", trading_pair)
-    // ("Comments: ", comment)
-    // ("Images: ", image_url)
-    const reviewData = {
-      user_id: user_id,
-      comment: comment,
-      trading_pair: trading_pair,
-      image_url: image_url,
-    };
-    fetch('http://localhost:9292/reviews',{
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reviewData)
-    })
-    .then((res) => res.json())
-    .then((newChart) => addNewCharts(newChart))
-
-    setTitle("")
-    setPairname("")
-    setComments("")
-    setImage("")
-  }
+  let history = useHistory();
+    const [comment, setComment] = useState('');
+    const [image_url, setImageUrl] = useState('');
+    const [trading_pair, setTradingPair] = useState('');
+    const [user_id, setUserId] = useState('');
+    const [isFormHidden] = useState(false);
+    const postData = () => {
+        axios.post(`http://localhost:9292/reviews`, {
+            comment,
+            image_url,
+            trading_pair,
+            user_id,
+        }).then(() => {
+            history.push('/Charts');
+        })
+    }
 
   return (
     <div id="createchart">
@@ -72,19 +48,27 @@ export default function CreateCharts(addNewCharts) {
 
       <div className="container">
         <h1>Create Chart</h1>
-        <form onSubmit={handleSubmit} className="form-center">
-        {/* <button onClick={handleFormHiddenBtn}>Show/hide new  form</button> */}
-      {isFormHidden ? <CreateCharts addNewCharts={addNewCharts}/> : null}
-          <label>Name:</label>
-          <input type="text" name="user_id" value={user_id} onChange={(e) => setTitle(e.target.value)}/>
-          <label>Pairs:</label>
-          <input type="text" name="trading_pair" value={trading_pair} onChange={(e) => setPairname(e.target.value)}/>
-          <label>Comments:</label>
-          <input type="text" name="comment" rows={10} value={comment} onChange={(e) => setComments(e.target.value)}/>
-          <label>Image:</label>
-          <input type="text" name="image_url" value={image_url} onChange={(e) => setImage(e.target.value)}/>
-          <input type="submit" value="Share your Chart and Comments" />
-        </form>
+    
+        <Form className="form-center">
+        {isFormHidden ? <CreateCharts addNewCharts={addNewCharts}/> : null}
+                <Form.Field>
+                    <label>Comment</label>
+                    <input placeholder='Comment' name="comment" rows={10} value={comment} onChange={(e) => setComment(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
+                    <label>Chart</label>
+                    <input placeholder='Chart' name= "image_url"  value={image_url} onChange={(e) => setImageUrl(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
+                    <label>Trading Pair</label>
+                    <input placeholder='Trading Pair' name="trading_pair" value={trading_pair} onChange={(e) => setTradingPair(e.target.value)}/>
+                </Form.Field>
+                <Form.Field>
+                    <label>User ID</label>
+                    <input placeholder='User ID' name="user_id" value={user_id} onChange={(e) => setUserId(e.target.value)}/>
+                </Form.Field>
+                <Button onClick={postData} type='submit'>Submit</Button>
+            </Form>
       </div>
     </div>
   );

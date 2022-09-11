@@ -1,76 +1,106 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../css/Charts.css"
+import React, { useEffect, useState } from 'react';
+import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import "../css/Charts.css";
 
-
-const FeaturedCharts = () => {
-  const [reviews, setProducts] = useState([]);
+export default function Read() {
+    const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-    fetchProducts();
-  }, []);
+        axios.get(`http://localhost:9292/reviews`)
+            .then((response) => {
+                console.log(response.data)
+                setAPIData(response.data);
+            })
+    }, []);
 
-  const [isMarked, setIsMarked] = useState(false)
-  
+    const setData = (data) => {
+        let { id, comment, image_url, trading_pair, user_id } = data;
+        localStorage.setItem('ID', id); 
+        localStorage.setItem('Comment', comment);
+        localStorage.setItem('Chart', image_url);
+        localStorage.setItem('Trading Pair', trading_pair);
+        localStorage.setItem('User ID', user_id);
+    }
 
-  const handleMarkBtn = () => {
-    setIsMarked(!isMarked)
-  }
+    const getData = () => {
+        axios.get(`http://localhost:9292/reviews`)
+            .then((getData) => {
+                setAPIData(getData.data);
+            })
+    }
 
-  const fetchProducts = () => {
-    axios
-      .get('http://localhost:9292/reviews')
-      .then((res) => {
-        console.log(res);
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    const onDelete = (id) => {
+        axios.delete(`http://localhost:9292/reviews/${id}`)
+        .then(() => {
+            getData();
+        })
+    }
 
-// write a function that will delete a review
-  const deleteReview = (id) => {
-    axios
-      .delete(`http://localhost:9292/reviews/${id}`)
-      .then((res) => {
-        console.log(res);
-        fetchProducts();
-      })
-      .catch((err) => {
-      });
-  };
+    // return (
+    //     <div>
+    //         <Table singleLine>
+    //             <Table.Header>
+    //                 <Table.Row>
+    //                     <Table.HeaderCell>Comment</Table.HeaderCell>
+    //                     <Table.HeaderCell>Chart</Table.HeaderCell>
+    //                     <Table.HeaderCell>Trading Pair</Table.HeaderCell>
+    //                     <Table.HeaderCell>User ID</Table.HeaderCell>
+    //                     <Table.HeaderCell>Update</Table.HeaderCell>
+    //                     <Table.HeaderCell>Delete</Table.HeaderCell>
+    //                 </Table.Row>
+    //             </Table.Header>
 
-// write a function that will update a review
+    //             <Table.Body>
+    //                 {APIData.map((data) => {
+    //                     return (
+    //                         <Table.Row>
+    //                             <Table.Cell>{data.comment}</Table.Cell>
+    //                             <Table.Cell>{data.image_url}</Table.Cell>
+    //                             <Table.Cell>{data.trading_pair}</Table.Cell>
+    //                             <Table.Cell>{data.user_id}</Table.Cell>
+    //                             <Link to='/update'>
+    //                                 <Table.Cell> 
+    //                                     <Button onClick={() => setData(data)}>Update</Button>
+    //                                 </Table.Cell>
+    //                             </Link>
+    //                             <Table.Cell>
+    //                                 <Button onClick={() => onDelete(data.id)}>Delete</Button>
+    //                             </Table.Cell>
+    //                         </Table.Row>
+    //                     )
+    //                 })}
+    //             </Table.Body>
+    //         </Table>
+    //     </div>
+    // )
 
-  return (
-      <div id="main-page">
-        <h1>Featured Charts</h1>
-        <center>
-        <div className='chart-container'>
-          {reviews.map((review) => (
-            <div className='card'>
-              <div className='img-card'>
-                <img src={review.image_url} alt='chart-not-found' />
-              </div>
-              <br></br>
-              <div className='detail-card'>
-                <h1>{review.user_id}</h1>
-                <h3>{review.trading_pair}</h3>
-                <p>{review.comment}</p>
-                <button onClick={handleMarkBtn}>{isMarked ? "Mark as unread" : "Mark as read" }</button>
-                <br></br>
-                <button onClick={deleteReview}>
-                  <span role="img" aria-label="delete">
-                    🗑
-                  </span>
-                </button>
-              </div>
-            </div>
-          ))}
+    return (
+        <div id="main-page">
+            <h1>Featured Charts</h1>
+            <center>
+                <div className='chart-container'>
+                    {APIData.map((data) => (
+                        <div className='card'>
+                            <div className='img-card'>
+                                <img src={data.image_url} alt='chart-not-found' />
+                            </div>
+                            <br></br>
+                            <div className='detail-card'>
+                                <h1>{data.user_id}</h1>
+                                <h3>{data.trading_pair}</h3>
+                                <p>{data.comment}</p>
+                                {/* <button onClick={handleMarkBtn}>{isMarked ? "Mark as unread" : "Mark as read" }</button> */}
+                                <br></br>
+                                <Link to='/update'>
+                                    <Button onClick={() => setData(data)}>Update</Button>
+                                </Link>
+                                <Button onClick={() => onDelete(data.id)}>Delete 🗑</Button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </center>
         </div>
-        
-        </center>
-      </div>
     );
-  };
-export default FeaturedCharts;
+}
