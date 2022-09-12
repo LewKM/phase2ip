@@ -3,7 +3,7 @@
 ## Screenshot
  ![image](/public/Screenshot%from%2022-08-01%15-06-06.png)
   ![image](/public/Screenshot%from%2022-09-12%05-37-51.png)
-  ![image](public/Screenshot from 2022-09-12 05-38-42.png)
+  ![image](public/Screenshot%from%2022-09-12%05-38-42.png)
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
