@@ -2,7 +2,6 @@
  ## Lewis Mwendwa Kathembe
 ## Screenshot
  ![image](./public/Screenshot%20from%202022-08-01%2015-06-06.png)
-  ![image](./public/Screenshot%20from%202022-08-01%2015-08-27.png)
   ![image](./public/Screenshot%20from%202022-09-12%2005-37-51.png)
   ![image](./public/Screenshot%20from%202022-09-12%2005-38-06.png)
  ## Table of Content
