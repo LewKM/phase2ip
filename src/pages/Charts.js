@@ -31,7 +31,7 @@ export default function FeaturedCharts() {
     }
 
     const onDelete = (id) => {
-        axios.delete(`http://localhost:9292/reviews/${id}`)
+        axios.delete(`https://forextalksbackend.herokuapp.com/reviews/${id}`)
         .then(() => {
             getData();
         })
