@@ -1,9 +1,9 @@
 # React-Web-Forex-Idea-Platform
  ## Lewis Mwendwa Kathembe
 ## Screenshot
- ![image](./public/Screenshot%20from%202022-08-01%2015-06-06.png)
-  ![image](./public/Screenshot%20from%202022-09-12%2005-37-51.png)
-  ![image](./public/Screenshot%20from%202022-09-12%2005-38-06.png)
+ ![image](./public/Screenshot from 2022-08-01 15-06-06.png)
+  ![image](./public/Screenshot from 2022-09-12 05-37-51.png)
+  ![image](./public/Screenshot from 2022-09-12 05-38-42.png)
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
