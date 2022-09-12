@@ -3,6 +3,8 @@
 ## Screenshot
  ![image](./public/Screenshot%20from%202022-08-01%2015-06-06.png)
   ![image](./public/Screenshot%20from%202022-08-01%2015-08-27.png)
+  ![image](./public/Screenshot%20from%202022-09-12%2005-37-51.png)
+  ![image](./public/Screenshot%20from%202022-09-12%2005-38-06.png)
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
@@ -13,7 +15,7 @@
  - [Licence](#licence)
  - [Authors Info](#Authors-Info)
  ## Description
- <p>This project is a web application that allows traders to gamong themselves on their understanding and chart analysis of charts.</p>
+ <p>This project is a web application that allows traders to share among themselves on their understanding and chart analysis of charts.</p>
 [Go Back to the top](#React-Web-Forex-Idea-Platform)
 
 ## Features
@@ -38,7 +40,7 @@ https://forex-talks.netlify.app/
 * CSS - which was used to style the User Interface.
 * JavaScript - which was used for the generation and grading of the frontend JSON file database.
 [Go Back to the top](# React-Web-Forex-Idea-Platform)
-* JSON - was used to hold the database for the application deployed on heroku
+* Sqlite3, PostGresql & JSON - were used to hold the database for the application deployed on heroku
 ## Known Bugs
 * The platform has no bugs in it.
 ## Licence
