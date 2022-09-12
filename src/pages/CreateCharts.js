@@ -13,7 +13,7 @@ export default function CreateCharts() {
     const [user_id, setUserId] = useState('');
     const [isFormHidden] = useState(false);
     const postData = () => {
-        axios.post(`http://localhost:9292/reviews`, {
+        axios.post(`https://forextalksbackend.herokuapp.com/reviews`, {
             comment,
             image_url,
             trading_pair,

@@ -7,7 +7,7 @@ import "../css/Charts.css";
 export default function FeaturedCharts() {
     const [APIData, setAPIData] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:9292/reviews`)
+        axios.get(`https://forextalksbackend.herokuapp.com/reviews`)
             .then((response) => {
                 console.log(response.data)
                 setAPIData(response.data);
@@ -24,7 +24,7 @@ export default function FeaturedCharts() {
     }
 
     const getData = () => {
-        axios.get(`http://localhost:9292/reviews`)
+        axios.get(`https://forextalksbackend.herokuapp.com/reviews`)
             .then((getData) => {
                 setAPIData(getData.data);
             })

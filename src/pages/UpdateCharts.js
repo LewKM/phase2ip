@@ -30,7 +30,7 @@ export default function UpdateCharts() {
     }, []);
 
     const updateAPIData = () => {
-        axios.patch(`http://localhost:9292/reviews/${id}`, {
+        axios.patch(`https://forextalksbackend.herokuapp.com/reviews/${id}`, {
             comment,
             image_url,
             trading_pair,
