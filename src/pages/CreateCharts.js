@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import "../css/CreateCharts.css";
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Button, Form } from 'semantic-ui-react'
 import axios from 'axios';
 
 export default function CreateCharts() {
 
-  let history = useHistory();
+  let history = useNavigate();
     const [comment, setComment] = useState('');
     const [image_url, setImageUrl] = useState('');
     const [trading_pair, setTradingPair] = useState('');
@@ -19,7 +19,7 @@ export default function CreateCharts() {
             trading_pair,
             user_id,
         }).then(() => {
-            history.push('/Charts');
+            history.push('/charts');
         })
     }
 

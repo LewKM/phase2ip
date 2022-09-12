@@ -93,8 +93,9 @@ export default function FeaturedCharts() {
                                 {/* <button onClick={handleMarkBtn}>{isMarked ? "Mark as unread" : "Mark as read" }</button> */}
                                 <br></br>
                                 <Link to='/update'>
-                                    <Button onClick={() => setData(data)}>Update</Button>
+                                    <Button onClick={() => setData(data)}>Edit ✏️</Button>
                                 </Link>
+                                <br></br>
                                 <Button onClick={() => onDelete(data.id)}>Delete 🗑</Button>
                             </div>
                         </div>

@@ -1,18 +1,24 @@
 import React, {useState, useEffect} from "react";
 import "../css/CreateCharts.css";
-import { useHistory } from 'react-router';
-import { Button, Form } from 'semantic-ui-react'
+import { useNavigate } from 'react-router';
+import { Button, Form} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function UpdateCharts() {
 
-    let history = useHistory();
+    let history = useNavigate();
     const [id, setID] = useState(null);
     const [comment, setComment] = useState(''); 
     const [image_url, setImageUrl] = useState('');
     const [trading_pair, setTradingPair] = useState('');
     const [user_id, setUserId] = useState('');
     const [isFormHidden] = useState(false);
+    
+	const handleClick = () => {
+    // 👇️ replace set to true
+    history('/about', {replace: true});
+  };
     
 
     useEffect(() => {
@@ -30,7 +36,7 @@ export default function UpdateCharts() {
             trading_pair,
             user_id,
         }).then(() => {
-            history.push('/Charts');
+            history.push('');
         })
     }
 
@@ -78,7 +84,11 @@ export default function UpdateCharts() {
                     <label>User ID</label>
                     <input placeholder='User ID' name="user_id" value={user_id} onChange={(e) => setUserId(e.target.value)}/>
                 </Form.Field>
-                <Button onClick={updateAPIData} type='submit'>Update</Button>
+                <Button onClick={updateAPIData} type='submit'>Submit Update</Button>
+                <br></br>
+                <Link to='/chart'>
+                    <Button onClick={handleClick}>Updated Charts</Button>
+                </Link>
             </Form>
       </div>
     </div>
